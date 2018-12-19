@@ -166,8 +166,8 @@ class LazyScriptDescriptor(
                 ?: return errorDescriptor(MISSING_IMPORTED_SCRIPT_FILE)
             val psiFile = psiManager.findFile(vfile)
                 ?: return errorDescriptor(MISSING_IMPORTED_SCRIPT_PSI)
-            // Note: is not a error now - if import references other valid source file, it is simply compiled along with script
-            // TODO: check if this is the behavior we want to have
+            // Note: is not an error now - if import references other valid source file, it is simply compiled along with script
+            // TODO: check if this is the behavior we want to have - see #KT-28916
             val ktScript = (psiFile as? KtFile)?.declarations?.firstIsInstanceOrNull<KtScript>()
                 ?: return null
             return resolveSession.getScriptDescriptor(ktScript)
