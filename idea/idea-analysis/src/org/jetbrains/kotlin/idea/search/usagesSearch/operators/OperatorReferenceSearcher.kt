@@ -16,6 +16,7 @@
 
 package org.jetbrains.kotlin.idea.search.usagesSearch.operators
 
+import com.intellij.lang.java.JavaLanguage
 import com.intellij.openapi.progress.ProgressIndicatorProvider
 import com.intellij.openapi.progress.util.ProgressWrapper
 import com.intellij.psi.*
@@ -202,7 +203,7 @@ abstract class OperatorReferenceSearcher<TReferenceElement : KtElement>(
     protected open fun resolveTargetToDescriptor(): FunctionDescriptor? {
         return when (targetDeclaration) {
             is KtDeclaration -> targetDeclaration.resolveToDescriptorIfAny(BodyResolveMode.FULL)
-            is PsiMember -> targetDeclaration.getJavaOrKotlinMemberDescriptor()
+            is PsiMethod -> if (targetDeclaration.language is JavaLanguage) targetDeclaration.getJavaOrKotlinMemberDescriptor() else null
             else -> null
         }  as? FunctionDescriptor
     }
