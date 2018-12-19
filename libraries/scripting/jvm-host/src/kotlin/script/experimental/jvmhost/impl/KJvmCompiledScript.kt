@@ -33,7 +33,7 @@ class KJvmCompiledModule(
 class KJvmCompiledScript<out ScriptBase : Any>(
     compilationConfiguration: ScriptCompilationConfiguration,
     private var scriptClassFQName: String,
-    override val otherScripts: List<CompiledScript<*>>? = null,
+    override val otherScripts: List<CompiledScript<*>> = emptyList(),
     private var compiledModule: KJvmCompiledModule? = null
 ) : CompiledScript<ScriptBase>, Serializable {
 

@@ -60,7 +60,7 @@ open class BasicJvmScriptEvaluator : ScriptEvaluator {
                         else -> scriptEvaluationConfiguration
                     }
 
-                    compiledScript.otherScripts?.forEach {
+                    compiledScript.otherScripts.forEach {
                         // TODO: in the future other scripts could be used for other purposes, so args here should be added only for actually imported scripts
                         // (it means that we should keep mapping somewhere (or reuse one with source dependencies) between imported scrips and e.g. fqnames)
                         val importedScriptEvalRes = invoke(it, updatedEvalConfiguration)
