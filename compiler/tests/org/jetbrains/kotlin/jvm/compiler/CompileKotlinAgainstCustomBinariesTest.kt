@@ -644,11 +644,11 @@ class CompileKotlinAgainstCustomBinariesTest : AbstractKotlinCompilerIntegration
             // If there's no "xi" field in the Metadata annotation, it's value is assumed to be 0, i.e. _not_ pre-release
             var isPreRelease = false
 
-            ClassReader(file.readBytes()).accept(object : ClassVisitor(Opcodes.ASM6) {
+            ClassReader(file.readBytes()).accept(object : ClassVisitor(Opcodes.API_VERSION) {
                 override fun visitAnnotation(desc: String, visible: Boolean): AnnotationVisitor? {
                     if (desc != JvmAnnotationNames.METADATA_DESC) return null
 
-                    return object : AnnotationVisitor(Opcodes.ASM6) {
+                    return object : AnnotationVisitor(Opcodes.API_VERSION) {
                         override fun visit(name: String, value: Any) {
                             if (name != JvmAnnotationNames.METADATA_EXTRA_INT_FIELD_NAME) return
 
