@@ -116,7 +116,7 @@ abstract class KotlinGradleAbstractMultiplatformModuleBuilder(
             val path = externalProjectSettings.externalProjectPath
             val externalSystemId = propertyManager.getExternalSystemId()
             if (ExternalSystemApiUtil.getExternalRootProjectPath(module) == null && externalSystemId != null) {
-                val projectSystemId = ProjectSystemId(externalSystemId);
+                val projectSystemId = ProjectSystemId(externalSystemId)
                 val projectData = ProjectData(projectSystemId, module.name, path, path)
                 val moduleData = ModuleData(
                     propertyManager.getLinkedProjectId() ?: "",
