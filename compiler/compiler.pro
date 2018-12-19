@@ -250,4 +250,5 @@ messages/**)
 
 -keep class net.jpountz.lz4.* { *; }
 
+# used in LazyScriptDescriptor
 -keep class org.jetbrains.kotlin.utils.addToStdlib.AddToStdlibKt { *; }
