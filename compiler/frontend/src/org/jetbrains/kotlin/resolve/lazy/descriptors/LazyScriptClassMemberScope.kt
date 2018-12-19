@@ -105,7 +105,7 @@ class LazyScriptClassMemberScope(
     }
 
     companion object {
-        const val IMPLICIT_RECEIVER_PARAM_NAME_PREFIX = "\$\$providedReceiver"
+        const val IMPLICIT_RECEIVER_PARAM_NAME_PREFIX = "\$\$implicitReceiver"
         const val IMPORTED_SCRIPT_PARAM_NAME_PREFIX = "\$\$importedScript"
     }
 }
