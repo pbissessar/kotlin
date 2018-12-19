@@ -56,7 +56,6 @@ import java.io.PrintWriter
 import java.io.StringWriter
 
 const val GENERATE_SMAP = true
-const val API = Opcodes.API_VERSION
 const val NUMBERED_FUNCTION_PREFIX = "kotlin/jvm/functions/Function"
 const val INLINE_FUN_VAR_SUFFIX = "\$iv"
 
